@@ -32,6 +32,7 @@ const ApiRides = (userState,dispatch,dataCheck) => {
                 })
                 /* NEAREST DATA */
                 let ridesFilter = ridesIdsFilterSort.map( el => el.rideData )
+                let ridesFilterIdValue = ridesIdsFilterSort.map( el => el.ridesIdValue )
                 /* GET TIME NOW */
                 const timeNow = new Date();
                 let timeNow_ = timeNow.getTime();
@@ -41,9 +42,6 @@ const ApiRides = (userState,dispatch,dataCheck) => {
                 let originalPast = ridesFilter.filter( el => new Date(el.date).getTime() <  timeNow_ );
                 /* DISPATCH DATA TO ORIGINAL STORE */
                 if( dataCheck !== 0 && ridesFilter.length > 0 ){
-                    console.log(ridesFilter);
-                    console.log(originalUpcoming);
-                    console.log(originalPast);
                     try{
                         dispatch( rideAdd( 
                             {   rides_data:ridesFilter,
@@ -52,7 +50,7 @@ const ApiRides = (userState,dispatch,dataCheck) => {
                                 upcomingCount:originalUpcoming.length, 
                                 pastCount:originalPast.length} 
                         ) )
-                        dispatch( originalRidesAddNearest( {originalRidesNearest:ridesFilter}) )
+                        dispatch( originalRidesAddNearest( {originalRidesNearest:ridesFilter, ridesFilterIdValue:ridesFilterIdValue}) )
                         dispatch( originalRidesAddUpcoming( {originalRidesUpcoming:originalUpcoming} ) );
                         dispatch( originalRidesAddPast( {originalRidesPast:originalPast} ) );
                     }catch(err){

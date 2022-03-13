@@ -4,6 +4,7 @@ const OriginalRidesSlice = createSlice({
     name:'OriginalRidesSlice',
     initialState:{
         originalRidesNearest:[],
+        ridesFilterIdValue:[],
         originalRidesUpcoming:[],
         originalRidesPast:[],
         stateSelect:'all',
@@ -12,7 +13,9 @@ const OriginalRidesSlice = createSlice({
     reducers:{
         originalRidesAddNearest: ( state, action ) => {
             let ridesData = action.payload.originalRidesNearest;
+            let IdValue = action.payload.ridesFilterIdValue;
             state.originalRidesNearest = ridesData;
+            state.ridesFilterIdValue = IdValue;
             console.log('from Nearest original')
         },
         originalRidesAddUpcoming: ( state, action ) => {
