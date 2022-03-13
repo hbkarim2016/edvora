@@ -87,7 +87,7 @@ const Rides = () => {
                                                                         :
                                                                         ${DateFunc(el.date).minutes < 10 ? '0' + DateFunc(el.date).minutes : DateFunc(el.date).minutes}
                                                                     `}</span></h2>
-                                                    <h2>Distance : <span>0</span></h2>
+                                                    <h2>Distance : <span>{ridesFilterIdValue[indx]}</span></h2>
                                                 </div>
                                             </div>
                                             <div className='ride-single-option'>
@@ -125,7 +125,7 @@ const Rides = () => {
                                                                     :
                                                                     ${DateFunc(el.date).minutes < 10 ? '0' + DateFunc(el.date).minutes : DateFunc(el.date).minutes}
                                                                 `}</span></h2>
-                                                <h2>Distance : <span>0</span></h2>
+                                                <h2>Distance : <span>{ridesFilterIdValue[indx]}</span></h2>
                                             </div>
                                         </div>
                                         <div className='ride-single-option'>
