@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import ApiUser from "./content/apis/ApiUser";
+import Filter from "./content/components/Filter/Filter";
+import Header from "./content/components/Header/Header";
+import Rides from "./content/components/Rides/Rides";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  const apiUserHandle = () => {
+    ApiUser(dispatch)
+  }
+
+  useEffect(
+    () => {
+      try{
+        apiUserHandle()
+      }catch(err){
+        console.log(err)
+      }
+    }
+  ,[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Filter />
+      <Rides />
     </div>
   );
 }

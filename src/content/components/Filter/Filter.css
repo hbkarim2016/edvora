@@ -1,0 +1,114 @@
+.filter{
+    margin-top: 15px;
+}
+.filter *{
+    color: var(--light-color);
+}
+.filter .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter .filter-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.filter .filter-links h2{
+    font-weight:700;
+    font-size:16px;
+    line-height:21.78px;
+    margin-left: 0;
+    padding-bottom: 4px;
+}
+.filter .filter-links a{
+    margin-right: 40px;
+    text-decoration: none;
+}
+.filter .filter-links .active h2{
+    color:white
+}
+.filter .filter-links .active{
+    color: white;
+    position: relative;
+}
+.filter .filter-links .active::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: white;
+}
+.filter .filter-selects{
+    position: relative;
+}
+.filter .filter-selects .filter-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.filter .filter-selects .filter-header.active *{
+    color: white;
+    font-weight: 502;
+}
+.filter .filter-selects *{
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.filter .filter-selects h2{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.filter .filter-selects .filter-lists{
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background: var(--second-color);
+    padding: 15px;
+    box-shadow: 0px 1px 7px -2px #000;
+    border-radius: 5px;
+    display: none;
+    width: 300px;
+}
+.filter .filter-selects .filter-lists.active{
+    display: block;
+}
+.filter .filter-selects .filter-lists .filter-single-list{
+    padding: 10px 20px;
+    background: var(--main-color);
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter .filter-selects .filter-lists .filter-single-list.filter-list-items{
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+.filter .filter-selects .filter-lists .filter-state,
+.filter .filter-selects .filter-lists .filter-city{
+    background-color: var(--third-color);
+    margin-top: 15px;
+}
+.filter .filter-selects .filter-lists .filter-single-list .filter-select-style{
+    padding: 4px;
+    padding-left: 0;
+}
+.filter .filter-selects .filter-lists .filter-single-list.filter-list-items .filter-select-style{
+    width: 100%;
+    padding: 15px;
+}
+.filter .filter-selects .filter-lists .filter-single-list .filter-select-style h2{
+    font-weight: 501;
+}
+.filter .filter-selects .filter-lists .filter-state-list{
+    display: none;
+}
+.filter .filter-selects .filter-lists .filter-state-list.active{
+    display: block;
+}
